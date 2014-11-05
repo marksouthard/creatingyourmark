@@ -1,0 +1,133 @@
+/*
+	Site: http://creatingyourmark.com
+	Author: Mark Southard
+ */
+
+@import "dependencies/variables";
+@import "dependencies/reset";
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	background: $light-blue;
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+body {
+	background: $background;
+	color: $primary-color;
+	font-family: 'Sorts Mill Goudy', serif;
+	line-height: 1.4;
+	-webkit-font-smoothing: antialiased;
+}
+
+.container {
+	margin: 0 auto;
+	padding-top: 6%;
+	width: 94%;
+}
+
+.content { clear: both; }
+
+header { overflow: hidden; }
+
+.site-description { color: $secondary-color; }
+
+#face { display: none; }
+
+h1 {
+	font-size: 1.5em;
+	margin-bottom: 0.5em;
+	margin-top: 0.5em;
+}
+
+h3 {
+	color: $secondary-color;
+	font-size: 0.75em;
+	margin: 5em 0 1em;
+	text-transform: uppercase;
+}
+
+ol {
+	list-style-type: decimal;
+	list-style-position: outside;
+	margin-left: 20px;
+}
+
+li { margin-bottom: 0.875em; }
+
+a {
+	border-bottom: 1px solid $border;
+	color: $tertiary-color;
+	text-decoration: none;
+	-webkit-transition: color 0.1s ease-in, border 0.2s ease-in;
+	-moz-transition: color 0.1s ease-in, border 0.2s ease-in;
+	-ms-transition: color 0.1s ease-in, border 0.2s ease-in;
+	-o-transition: color 0.1s ease-in, border 0.2s ease-in;
+	transition: color 0.1s ease-in, border 0.2s ease-in;
+
+}
+
+a:hover {
+	border-color: $secondary-color;
+	// color: #77CDF7;
+}
+
+span {
+	color: $secondary-color;
+	display: none;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+span.description {
+	display: block;
+	margin: 5px 0 0 0;
+}
+
+footer {
+	color: $secondary-color;
+	font-size: 0.625em;
+	margin-bottom: 2em;
+	margin-top: 8em;
+	text-transform: uppercase;
+}
+
+footer span { display: inline-block; }
+
+@media screen and (min-width: 50em) {
+	body { margin: 10px;}
+
+	.container {
+		margin: 0 0 0 10%;
+		width: 75%;
+	}
+
+	#face {
+		display: block;
+		float: left;
+		margin-right: 40px;
+	}
+
+	.content,
+	footer { margin-left: 140px; }
+
+	ol { margin-left: 0; }
+
+	span { display: inline-block; }
+
+	.description { display: inline; }
+}
+
+@media screen and (min-width: 60em) {
+	.container {
+		margin: 0 0 0 15%;
+		width: 60%;
+	}
+}
