@@ -3,6 +3,15 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
+		scsslint: {
+			allFiles: [
+				'src/sass/*.scss'
+			],
+			options: {
+				config: '.scss-lint.yml'
+			}
+		},
+
 		sass: {
 			dist: {
 				options: {
@@ -15,11 +24,33 @@ module.exports = function(grunt) {
 			}
 		},
 
+		autoprefixer: {
+			options: {
+				map: true
+			},
+			dist: {
+				files: {
+					'dist/css/style.css': 'dist/css/style.css'
+				}
+			}
+		},
+
 		cssmin: {
 			dist: {
 				files: {
 					'dist/css/style.min.css': 'dist/css/style.css'
 				}
+			}
+		},
+
+		inline: {
+			options: {
+				cssmin: false,
+				uglify: false
+			},
+			dist: {
+				src: 'src/index.html',
+				dest: 'dist/index.html'
 			}
 		},
 
@@ -35,13 +66,27 @@ module.exports = function(grunt) {
 			}
 		},
 
+		copy: {
+			main: {
+				files: [
+					{
+						expand: true,
+						src: ['src/img/*'],
+						dest: 'dist/img',
+						filter: 'isFile',
+						flatten: true
+					}
+				]
+			}
+		},
+
 		watch: {
 			options: {
 				livereload: true
 			},
 			css: {
 				files: ['src/sass/*.scss'],
-				tasks: ['sass', 'cssmin'],
+				tasks: ['scsslint', 'sass', 'cssmin'],
 				options: {
 					spawn: false
 				}
@@ -57,10 +102,15 @@ module.exports = function(grunt) {
 
 	});
 
+	grunt.loadNpmTasks('grunt-scss-lint');
+	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-inline');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
-	grunt.registerTask('default', ['sass', 'cssmin', 'htmlmin']);
+	grunt.registerTask('default', ['scsslint', 'sass', 'autoprefixer', 'cssmin', 'htmlmin', 'watch']);
+	grunt.registerTask('build', ['sass', 'autoprefixer', 'cssmin', 'inline', 'htmlmin', 'copy']);
 };
