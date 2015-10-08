@@ -1,22 +1,16 @@
-/*
-	Site: http://creatingyourmark.com
-	Author: Mark Southard
- */
+// Site: http://creatingyourmark.com
+// Author: Mark Southard
 
-@import "dependencies/variables";
-@import "dependencies/reset";
+@import 'dependencies/variables';
+@import 'dependencies/reset';
 
 * {
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
 html {
 	background: $light-blue;
 	font-size: 100%;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
 }
 
 body {
@@ -43,13 +37,13 @@ header { overflow: hidden; }
 
 h1 {
 	font-size: 1.5em;
-	margin-bottom: 0.5em;
-	margin-top: 0.5em;
+	margin-bottom: .5em;
+	margin-top: .5em;
 }
 
 h3 {
 	color: $secondary-color;
-	font-size: 0.75em;
+	font-size: .75em;
 	margin: 5em 0 1em;
 	text-transform: uppercase;
 }
@@ -66,12 +60,7 @@ a {
 	border-bottom: 1px solid $border;
 	color: $tertiary-color;
 	text-decoration: none;
-	-webkit-transition: color 0.1s ease-in, border 0.2s ease-in;
-	-moz-transition: color 0.1s ease-in, border 0.2s ease-in;
-	-ms-transition: color 0.1s ease-in, border 0.2s ease-in;
-	-o-transition: color 0.1s ease-in, border 0.2s ease-in;
-	transition: color 0.1s ease-in, border 0.2s ease-in;
-
+	transition: color .1s ease-in, border .2s ease-in;
 }
 
 a:hover {
