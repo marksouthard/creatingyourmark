@@ -9,20 +9,26 @@
 }
 
 html {
-	background: $light-blue;
-	font-size: 100%;
+	font-size: 62.5%;
 }
 
 body {
 	background: $background;
 	color: $primary-color;
-	font-family: 'Sorts Mill Goudy', serif;
-	line-height: 1.4;
+	font-family: $font;
+	font-size: 1.8em;
+	font-weight: 300;
+	line-height: 1.5;
 	-webkit-font-smoothing: antialiased;
+}
+
+strong {
+	font-weight: 600;
 }
 
 .container {
 	margin: 0 auto;
+	max-width: 400px;
 	padding-top: 6%;
 	width: 94%;
 }
@@ -33,17 +39,17 @@ header { overflow: hidden; }
 
 .site-description { color: $secondary-color; }
 
-#face { display: none; }
-
 h1 {
-	font-size: 1.5em;
+	font-size: 0.875em;
+	font-weight: 600;
 	margin-bottom: .5em;
 	margin-top: .5em;
 }
 
-h3 {
+h2 {
 	color: $secondary-color;
 	font-size: .75em;
+	font-weight: 600;
 	margin: 5em 0 1em;
 	text-transform: uppercase;
 }
@@ -73,7 +79,7 @@ span {
 	margin-left: 5px;
 	margin-right: 5px;
 }
-
+img { border-radius: 100%; }
 span.description {
 	display: block;
 	margin: 5px 0 0 0;
@@ -97,20 +103,12 @@ footer span { display: inline-block; }
 		width: 75%;
 	}
 
-	#face {
-		display: block;
-		float: left;
-		margin-right: 40px;
-	}
-
 	.content,
 	footer { margin-left: 140px; }
 
 	ol { margin-left: 0; }
 
 	span { display: inline-block; }
-
-	.description { display: inline; }
 }
 
 @media screen and (min-width: 60em) {

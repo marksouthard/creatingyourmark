@@ -26,20 +26,26 @@ ol, ul {
 }
 
 html {
-  background: #dcf0fa;
-  font-size: 100%;
+  font-size: 62.5%;
 }
 
 body {
-  background: #f0f0f0;
+  background: #f4f4f4;
   color: #454545;
-  font-family: 'Sorts Mill Goudy', serif;
-  line-height: 1.4;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.8em;
+  font-weight: 300;
+  line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+strong {
+  font-weight: 600;
 }
 
 .container {
   margin: 0 auto;
+  max-width: 400px;
   padding-top: 6%;
   width: 94%;
 }
@@ -56,19 +62,17 @@ header {
   color: #7a7a7a;
 }
 
-#face {
-  display: none;
-}
-
 h1 {
-  font-size: 1.5em;
+  font-size: 0.875em;
+  font-weight: 600;
   margin-bottom: .5em;
   margin-top: .5em;
 }
 
-h3 {
+h2 {
   color: #7a7a7a;
   font-size: .75em;
+  font-weight: 600;
   margin: 5em 0 1em;
   text-transform: uppercase;
 }
@@ -102,6 +106,10 @@ span {
   margin-right: 5px;
 }
 
+img {
+  border-radius: 100%;
+}
+
 span.description {
   display: block;
   margin: 5px 0 0 0;
@@ -129,12 +137,6 @@ footer span {
     width: 75%;
   }
 
-  #face {
-    display: block;
-    float: left;
-    margin-right: 40px;
-  }
-
   .content,
   footer {
     margin-left: 140px;
@@ -146,10 +148,6 @@ footer span {
 
   span {
     display: inline-block;
-  }
-
-  .description {
-    display: inline;
   }
 }
 @media screen and (min-width: 60em) {
