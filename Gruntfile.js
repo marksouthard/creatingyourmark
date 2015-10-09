@@ -43,17 +43,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-		inline: {
-			options: {
-				cssmin: false,
-				uglify: false
-			},
-			dist: {
-				src: 'src/index.html',
-				dest: 'dist/index.html'
-			}
-		},
-
 		htmlmin: {
 			dist: {
 				options: {
@@ -61,7 +50,8 @@ module.exports = function(grunt) {
 					collapseWhitespace: true
 				},
 				files: {
-					'dist/index.html': 'src/index.html'
+					'dist/index.html': 'src/index.html',
+					'dist/projects.html': 'src/projects.html'
 				}
 			}
 		},
@@ -86,14 +76,14 @@ module.exports = function(grunt) {
 			},
 			css: {
 				files: ['src/sass/*.scss'],
-				tasks: ['scsslint', 'sass', 'cssmin'],
+				tasks: ['processcss'],
 				options: {
 					spawn: false
 				}
 			},
 			html: {
-				files: ['src/index.html'],
-				tasks: ['htmlmin'],
+				files: ['src/*.html'],
+				tasks: ['processcss', 'htmlmin'],
 				options: {
 					spawn: false
 				}
@@ -106,11 +96,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-inline');
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 
-	grunt.registerTask('default', ['scsslint', 'sass', 'autoprefixer', 'cssmin', 'htmlmin', 'watch']);
-	grunt.registerTask('build', ['sass', 'autoprefixer', 'cssmin', 'inline', 'htmlmin', 'copy']);
+	grunt.registerTask('default', ['scsslint', 'sass', 'autoprefixer', 'cssmin', 'watch']);
+	grunt.registerTask('processcss', ['scsslint', 'sass', 'autoprefixer', 'cssmin'])
+	grunt.registerTask('build', ['sass', 'autoprefixer', 'cssmin', 'htmlmin', 'copy']);
 };
