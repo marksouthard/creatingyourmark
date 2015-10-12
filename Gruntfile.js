@@ -51,7 +51,7 @@ module.exports = function(grunt) {
 				},
 				files: {
 					'dist/index.html': 'src/index.html',
-					'dist/projects.html': 'src/projects.html'
+					'dist/projects/index.html': 'src/projects/index.html'
 				}
 			}
 		},
@@ -82,7 +82,7 @@ module.exports = function(grunt) {
 				}
 			},
 			html: {
-				files: ['src/*.html'],
+				files: ['src/**/*.html'],
 				tasks: ['processcss', 'htmlmin'],
 				options: {
 					spawn: false
