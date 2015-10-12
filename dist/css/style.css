@@ -39,52 +39,37 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-strong {
-  font-weight: 600;
-}
-
 .container {
-  margin: 0 auto;
   max-width: 400px;
-  padding-top: 6%;
+  position: absolute;
+  left: 3vw;
+  top: 7vh;
   width: 94%;
 }
 
-.content {
-  clear: both;
-}
-
-header {
-  overflow: hidden;
-}
-
-.site-description {
-  color: #7a7a7a;
-}
-
 h1 {
-  font-size: 0.875em;
+  font-size: 0.925em;
   font-weight: 600;
-  margin-bottom: .5em;
+  margin-bottom: 0;
   margin-top: .5em;
 }
 
 h2 {
   color: #7a7a7a;
-  font-size: .75em;
+  font-size: .6667em;
   font-weight: 600;
-  margin: 5em 0 1em;
+  margin: 3em 0 1em;
   text-transform: uppercase;
 }
 
 ol {
   list-style-type: decimal;
   list-style-position: outside;
-  margin-left: 20px;
+  margin-left: -.6667em;
 }
 
 li {
-  margin-bottom: 0.875em;
+  margin-bottom: 1em;
 }
 
 a {
@@ -99,61 +84,19 @@ a:hover {
   border-color: #7a7a7a;
 }
 
-span {
-  color: #7a7a7a;
-  display: none;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-img {
-  border-radius: 100%;
-}
-
-span.description {
-  display: block;
-  margin: 5px 0 0 0;
-}
-
-footer {
-  color: #7a7a7a;
-  font-size: 0.625em;
-  margin-bottom: 2em;
-  margin-top: 8em;
-  text-transform: uppercase;
-}
-
-footer span {
-  display: inline-block;
-}
-
 @media screen and (min-width: 50em) {
-  body {
-    margin: 10px;
-  }
-
   .container {
-    margin: 0 0 0 10%;
-    width: 75%;
-  }
-
-  .content,
-  footer {
-    margin-left: 140px;
+    left: 10vw;
   }
 
   ol {
     margin-left: 0;
   }
-
-  span {
-    display: inline-block;
-  }
 }
-@media screen and (min-width: 60em) {
+@media screen and (min-height: 35em) and (min-width: 30em) {
   .container {
-    margin: 0 0 0 15%;
-    width: 60%;
+    left: 10vw;
+    top: 30vh;
   }
 }
 
