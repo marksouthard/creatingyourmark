@@ -5,21 +5,20 @@
     <meta name="description" content="Mark Southard is a full-stack developer. He has helped to build Dunked and ThemeZilla.">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Raleway:300,600' rel='stylesheet' type='text/css'>
 	<link href="../dist/css/style.min.css?__inline=true" rel="stylesheet">
 
     <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Mark Southard - Full-stack Developer">
     <meta property="og:description" content="Mark Southard is a full-stack developer. He has helped to build Dunked and ThemeZilla.">
-    <meta property="og:url" content="http://www.creatingyourmark.com">
+    <meta property="og:url" content="http://www.marksouthard.co">
     <meta property="og:site_name" content="Mark Southard">
-    <meta property="og:image" content="http://www.creatingyourmark.com/img/portrait.jpg">
+    <meta property="og:image" content="http://www.marksouthard.co/img/portrait.jpg">
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="@marksouthard" />
     <meta name="twitter:title" content="Mark Southard - Full-stack Developer" />
     <meta name="twitter:description" content="Mark Southard is a full-stack developer. He has helped to build Dunked and ThemeZilla." />
-    <meta name="twitter:image" content="http://www.creatingyourmark.com/img/portrait.jpg" />
+    <meta name="twitter:image" content="http://www.marksouthard.co/img/portrait.jpg" />
 </head>
 <body>
 	<div class="container">
@@ -36,5 +35,21 @@
             <p>WordPress theme and plugin developer at <a href="http://www.themezilla.com/" target="_blank">ThemeZilla</a>. <a href="/projects">View past projects.</a></p>
         </article>
 	</div>
+    <noscript id="deferred-styles">
+        <link href='https://fonts.googleapis.com/css?family=Raleway:300,600' rel='stylesheet' type='text/css'>
+    </noscript>
+    <script>
+        var loadDeferredStyles = function() {
+            var addStylesNode = document.getElementById("deferred-styles");
+            var replacement = document.createElement("div");
+            replacement.innerHTML = addStylesNode.textContent;
+            document.body.appendChild(replacement)
+            addStylesNode.parentElement.removeChild(addStylesNode);
+        };
+        var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+            webkitRequestAnimationFrame || msRequestAnimationFrame;
+        if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+        else window.addEventListener('load', loadDeferredStyles);
+    </script>
 </body>
 </html>
